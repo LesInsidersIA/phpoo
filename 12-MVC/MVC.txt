@@ -1,0 +1,45 @@
+Présentation du schéma
+
+Le MVC - Model-View-Controller (Modèle-Vue-Controleur en français) est un principe d'organisation de code visant à le séparer en trois parties :
+- Les modèles
+- Les controleurs
+- Les vues
+
+Il permet de séparer le code qui produit une action/un traitement du code qui s'affiche à l'utilisateur.
+L'HTML n'est pas toléré dans le Model ni dans le Controller au même titre qu'on ne verra pas de traitement PHP dans la view (pas d'array, pas de boucle etc)
+Dans notre cours il ne s'agira pas d'une réelle architecture MVC, nous serons peut être amené à mettre quelques lignes de php dans la vue ou autres, nous parlerons ainsi d'une "approche MVC"
+
+Models : (BDD, SQL)
+    - Les modèles sont là où les données de l'application/du site sont stockées, généralement dans une base de données
+    - En charge de stocker et récupérer les informations
+    - Le modèle ne connait en rien l'interface utilisateur
+
+Views : (HTML, CSS)
+    - Les views sont ce que l'utilisateur voit sur son écran (le HTML)
+    - En charge de présenter les données à l'utilisateur
+    - La vue ne connait en rien ce qu'il se passe dans le modèle
+
+Controllers : (PHP)
+    - Les controleurs sont ce avec quoi l'utilisateur intéragit
+    - En charge de recevoir des requètes de la part de l'utilisateur et décide de l'action à adopter et de la réponse à renvoyer
+    - Le controleur est le seul élément qui intéragit avec le modèle
+
+Architecture MVC = 1 seul point d'entrée, ce sera notre index.php
+Pendant la navigation, l'internaute a l'impression de changer de page mais en réalité ce sont les pages qui viennent à lui, luli ne quitte pas l'index. (Souvent le cas dans les CMS)
+
+    --- Pourquoi utiliser du MVC ? ---
+
+    Organiser son code en suivant les concepts du modèle MVC permet de séparer complètement les taches et les développements de leur représentation à l'utilisateur.
+
+        - Facile à réutiliser -> gain de temps
+        - Code mieux organisé -> Plus facile à comprendre et à mettre à jour
+        - Les tests sont plus faciles à effectuer
+        - La sécurité y est plus importante
+
+        Inconvénients : Nombre de fichiers (trop complexe pour des projets petits à moyens). Le temps accordé à l'architecture peut ne pas être rentable.
+
+Spécialisation des développeurs :
+    Un des autres avantages est directement lié aux spécialisations des développeurs.
+        - Les désigners peuvent se concentrer sur la partie front sans jamais se soucier des traitements à effectuer en amont. 
+        - Les back dev peuvent se concentrer sur les traitements sans jamais se soucier de la façon dont cela sera affiché à l'utilisateur
+
